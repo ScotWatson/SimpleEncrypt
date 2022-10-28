@@ -142,8 +142,8 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
     });
     pButtons.appendChild(btnDecryptFile);
     plaintextEntry = document.createElement("textarea");
-    plaintextEntry.style.height = 100%;
-    plaintextEntry.style.width = 100%;
+    plaintextEntry.style.height = "100%";
+    plaintextEntry.style.width = "100%";
     document.body.appendChild(plaintextEntry);
   } catch (e) {
     ErrorLog.rethrow({
