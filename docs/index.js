@@ -74,11 +74,6 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
     const encoder = new TextEncoder("utf-8");
     const passwordBytes = encoder.encode(password);
     const key = await Encryption.digest_SHA256(passwordBytes);
-    console.log({
-      ciphertext: ciphertext,
-      key: key,
-      iv: iv,
-    });
     const decrypted = await Encryption.decrypt_AES256_CBC({
       ciphertext: ciphertext,
       key: key,
@@ -176,6 +171,7 @@ function openFile() {
 function saveFile(blob) {
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
+  a.download = "file";
   a.display = "none";
   document.body.appendChild(a);
   a.click();
