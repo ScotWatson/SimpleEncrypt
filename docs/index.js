@@ -64,7 +64,7 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
   }
   async function decryptText() {
     const file = await openFile();
-    const fileBytes = file.arrayBuffer();
+    const fileBytes = await file.arrayBuffer();
     const iv = new Uint8Array(fileBytes, 0, 16);
     const ciphertext = new Uint8Array(fileBytes, 16);
     const password = prompt("Password:");
@@ -89,7 +89,7 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
   }
   async function encryptFile() {
     const file = await openFile();
-    const plaintextBytes = file.arrayBuffer();
+    const plaintextBytes = await file.arrayBuffer();
     const password = prompt("Password:");
     if (password === null) {
       return;
@@ -105,7 +105,7 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
   }
   async function decryptFile() {
     const file = await openFile();
-    const fileBytes = file.arrayBuffer();
+    const fileBytes = await file.arrayBuffer();
     const iv = new Uint8Array(fileBytes, 0, 16);
     const ciphertext = new Uint8Array(fileBytes, 16);
     const password = prompt("Password:");
