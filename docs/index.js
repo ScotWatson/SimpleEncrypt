@@ -122,21 +122,25 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
     const pButtons = document.createElement("p");
     document.body.appendChild(pButtons);
     btnEncryptText = document.createElement("button");
+    btnEncryptText.innerHTML = "Encrypt Text";
     btnEncryptText.addEventListener("click", function (evt) {
       encryptText();
     });
     pButtons.appendChild(btnEncryptText);
     btnDecryptText = document.createElement("button");
+    btnDecryptText.innerHTML = "Decrypt Text";
     btnDecryptText.addEventListener("click", function (evt) {
       decryptText();
     });
     pButtons.appendChild(btnDecryptText);
     btnEncryptFile = document.createElement("button");
+    btnEncryptFile.innerHTML = "Encrypt File";
     btnEncryptFile.addEventListener("click", function (evt) {
       encryptFile();
     });
     pButtons.appendChild(btnEncryptFile);
     btnDecryptFile = document.createElement("button");
+    btnDecryptFile.innerHTML = "Decrypt File";
     btnDecryptFile.addEventListener("click", function (evt) {
       decryptFile();
     });
