@@ -60,7 +60,7 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
       plaintext: plaintextBytes,
       key: key,
     });
-    saveFile(new Blob( [ encrypted.iv, encrypted.ciphertext ] ));
+    saveFile(new Blob( [ encrypted.iv, encrypted.ciphertext ], "application/octet-stream" ));
   }
   async function decryptText() {
     const file = await openFile();
@@ -96,7 +96,7 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
       plaintext: plaintextBytes,
       key: key,
     });
-    saveFile(new Blob( [ encrypted.iv, encrypted.ciphertext ] ));
+    saveFile(new Blob( [ encrypted.iv, encrypted.ciphertext ], "application/octet-stream" ));
   }
   async function decryptFile() {
     const file = await openFile();
@@ -115,7 +115,7 @@ async function start( [ evtWindow, ErrorLog, Encryption ] ) {
       key: key,
       iv: iv,
     });
-    saveFile(new Blob( [ decrypted ] ));
+    saveFile(new Blob( [ decrypted ], "application/octet-stream" ));
   }
   try {
     document.body.style.overflow = "hidden";
